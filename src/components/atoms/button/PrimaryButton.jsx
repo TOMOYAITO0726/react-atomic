@@ -5,7 +5,7 @@ export const PrimaryButton = (props) => {
     const { children } = props;
     return <SButton>{children}</SButton>;  
 };
-
-const SButton = styled(BaseButton)`
+//BaseButtonで基となるスタイルを適用、上塗りも可
+const SButton = styled(BaseButton)`  
 background-color: #40514e;
 `;
