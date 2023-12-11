@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { UserContext } from "../../../providers/UserProvider";
+import { memo } from "react";
 
-export const UserIconWithName = (props) => { //ユーザーのアイコンと名前のセット
+export const UserIconWithName = memo((props) => { //ユーザーのアイコンと名前のセット
+    console.log(`UserIconWithName`);
     const { image, name } = props;
     const { userInfo } = useContext(UserContext);
     const isAdmin = userInfo ? userInfo.isAdmin : false;
@@ -15,7 +17,7 @@ export const UserIconWithName = (props) => { //ユーザーのアイコンと名
             {isAdmin && <SEdit>編集</SEdit>}{/*//isAdminがtrueなら編集リンク表示 */}
         </SContainer>
     );
-};
+});
 
 const SContainer = styled.div`
     text-aligh: center;

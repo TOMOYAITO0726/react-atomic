@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import { SearchInput } from "../molecules/SearchInput";
 import { UserCard } from "../organisims/user/UserCard";
-import { useLocation } from "react-router-dom";
+import { SecondaryButton } from "../atoms/button/SecondaryButton";
+import { useContext } from "react";
+import { UserContext } from "../../providers/UserProvider";
+//import { useLocation } from "react-router-dom";
 
 const users = [...Array(10).keys()].map(((val)=>{
     return {
@@ -19,13 +22,16 @@ const users = [...Array(10).keys()].map(((val)=>{
 
 
 export const Users = () => {
-    const { state } = useLocation();//stateプロパティ{ isAdmin: true }を取得するにはuseLoactionを使う
+    //const { state } = useLocation();//stateプロパティ{ isAdmin: true }を取得するにはuseLoactionを使う
     //const isAdmin = state ? state.isAdmin :false;//stateオブジェクトが存在するかどうかをチェックする。
-
+    const { userInfo, setUserInfo } = useContext(UserContext);
+    const onClickSwitch = () => setUserInfo({ isAdmin: !userInfo.isAdmin });//isAdminプロパティの状態が切り替わる
     return (
         <SContainer>
             <h2>ユーザー一覧</h2>
             <SearchInput />
+            <br />
+            <SecondaryButton onClick={onClickSwitch}>切り替え</SecondaryButton>
             <SUserArea>
             {users.map((user) => (
                 <UserCard key={user.id} user={user}  />
