@@ -8,7 +8,7 @@ export const UserCard = (props) => {
     return (
         <Card>
             <SDL>
-                <UserIconWithName image={user.image} name={user.name} isAdmin={isAdmin}/>
+                <UserIconWithName image={user.image} name={user.name} />
                 <dl>
                 <dt>メール</dt>
                 <dd>{user.emai}</dd>

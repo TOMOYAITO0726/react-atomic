@@ -20,7 +20,7 @@ const users = [...Array(10).keys()].map(((val)=>{
 
 export const Users = () => {
     const { state } = useLocation();//stateプロパティ{ isAdmin: true }を取得するにはuseLoactionを使う
-    const isAdmin = state ? state.isAdmin :false;//stateオブジェクトが存在するかどうかをチェックする。
+    //const isAdmin = state ? state.isAdmin :false;//stateオブジェクトが存在するかどうかをチェックする。
 
     return (
         <SContainer>
@@ -28,7 +28,7 @@ export const Users = () => {
             <SearchInput />
             <SUserArea>
             {users.map((user) => (
-                <UserCard key={user.id} user={user} isAdmin={isAdmin} />
+                <UserCard key={user.id} user={user}  />
             ))}
             </SUserArea>
         </SContainer>
