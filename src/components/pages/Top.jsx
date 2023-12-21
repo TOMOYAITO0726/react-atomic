@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { UserContext } from "../../providers/UserProvider";
 
 export const Top = () => {
-    const history = useHistory();
+    const history = useHistory();//historyオブジェクトを取得
     const { setUserInfo } = useContext(UserContext);//UserContextの値を取得
 
     const onClickAdmin = () => {

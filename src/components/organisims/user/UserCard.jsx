@@ -7,7 +7,7 @@ import { memo } from "react";
 export const UserCard = memo((props) => {
     console.log(`UserCard`);
 
-    const { user } = props;
+    const { user } = props;//propsからuserという名前のプロパティを受け取っている
     return (
         <Card>
             <SDL>

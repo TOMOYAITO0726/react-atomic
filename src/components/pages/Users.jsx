@@ -23,7 +23,7 @@ const users = [...Array(10).keys()].map(((val)=>{
 
 export const Users = () => {
     //const { state } = useLocation();//stateプロパティ{ isAdmin: true }を取得するにはuseLoactionを使う
-    //const isAdmin = state ? state.isAdmin :false;//stateオブジェクトが存在するかどうかをチェックする。
+    //const isAdmin = state ? state.isAdmin :false;//stateオブジェクトが存在するかどうかをチェックする。（管理者かどうかをチェックする）
     const { userInfo, setUserInfo } = useContext(UserContext);
     const onClickSwitch = () => setUserInfo({ isAdmin: !userInfo.isAdmin });//isAdminプロパティの状態が切り替わる
     return (

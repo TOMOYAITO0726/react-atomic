@@ -7,6 +7,8 @@ export const UserIconWithName = memo((props) => { //ユーザーのアイコン�
     console.log(`UserIconWithName`);
     const { image, name } = props;
     const { userInfo } = useContext(UserContext);
+    console.log("!!!");
+    console.log(userInfo);//isAdminプロパティを確認,管理者状態で入ればtrue
     const isAdmin = userInfo ? userInfo.isAdmin : false;
     return (
         <SContainer>
