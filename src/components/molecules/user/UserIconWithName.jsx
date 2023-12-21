@@ -2,11 +2,14 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { UserContext } from "../../../providers/UserProvider";
 import { memo } from "react";
+import { useRecoilValue } from "recoil";
+import { userState } from "../../../store/userState";
 
 export const UserIconWithName = memo((props) => { //ユーザーのアイコンと名前のセット
     console.log(`UserIconWithName`);
     const { image, name } = props;
-    const { userInfo } = useContext(UserContext);
+    //const { userInfo } = useContext(UserContext);
+    const userInfo = useRecoilValue(userState);
     console.log("!!!");
     console.log(userInfo);//isAdminプロパティを確認,管理者状態で入ればtrue
     const isAdmin = userInfo ? userInfo.isAdmin : false;
